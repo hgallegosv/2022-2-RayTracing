@@ -18,7 +18,7 @@ float t_tmp;
 // Para cada pixel lanzar un rayo
 for (int x=0; x < w; x++){
     for (int y=0; y < h; y++){
-        //rayo.dir = -f*ze + a(y/h -0.5)*ye + b(x/w-0.5)*xe;
+        rayo.dir = -f*ze + a*(y/h -0.5)*ye + b*(x/w-0.5)*xe;
         color = vec3(1,1,0);
         if ( esf.interseccion(rayo, t_tmp)) {
             color = esf.color;

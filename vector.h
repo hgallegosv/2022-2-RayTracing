@@ -11,6 +11,8 @@ public:
     float x,y,z;
     vec3() { x=y=z=0; }
     vec3(float _x, float _y, float _z) {x=_x;y=_y;z=_z;}
+    vec3 operator+(vec3 v) { return vec3( x+v.x, y+v.y, z+v.z); }
+
     vec3 cruz(vec3 v) {
         return vec3(y*v.z - z*v.y,
                     z*v.x - x*v.z,
@@ -31,5 +33,7 @@ public:
     }
 };
 
+vec3 operator/(float f, vec3 v);
+vec3 operator*(float f, vec3 v);
 
 #endif //INC_20222_RAYTRACING_VECTOR_H
