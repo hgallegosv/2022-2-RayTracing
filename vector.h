@@ -5,6 +5,7 @@
 #ifndef INC_20222_RAYTRACING_VECTOR_H
 #define INC_20222_RAYTRACING_VECTOR_H
 
+#include <cmath>
 
 class vec3 {
 public:
@@ -22,7 +23,13 @@ public:
         return x*v.x + y*v.y + z*v.z;
     }
     void normalize(){
-
+        double m = modulo();
+        x = x/m;
+        y = y/m;
+        z = z/m;
+    }
+    double modulo() {
+        return sqrt(x*x + y*y + z*z);
     }
     // para los colores
     void max_to_one(){
