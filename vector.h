@@ -13,6 +13,8 @@ public:
     vec3() { x=y=z=0; }
     vec3(float _x, float _y, float _z) {x=_x;y=_y;z=_z;}
     vec3 operator+(vec3 v) { return vec3( x+v.x, y+v.y, z+v.z); }
+    vec3 operator*(vec3 v) { return vec3( x*v.x, y*v.y, z*v.z); }
+    vec3 operator*(float f) { return vec3( x*f, y*f, z*f); }
 
     vec3 cruz(vec3 v) {
         return vec3(y*v.z - z*v.y,

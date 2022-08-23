@@ -5,8 +5,13 @@ CMakeFiles/20222_RayTracing.dir/Camara.cpp.obj
  D:/CG/2022-2-RayTracing/CImg.h
  D:/CG/2022-2-RayTracing/Camara.cpp
  D:/CG/2022-2-RayTracing/Camara.h
+ D:/CG/2022-2-RayTracing/Luz.h
  D:/CG/2022-2-RayTracing/Objeto.h
  D:/CG/2022-2-RayTracing/Rayo.h
+ D:/CG/2022-2-RayTracing/vector.h
+CMakeFiles/20222_RayTracing.dir/Luz.cpp.obj
+ D:/CG/2022-2-RayTracing/Luz.cpp
+ D:/CG/2022-2-RayTracing/Luz.h
  D:/CG/2022-2-RayTracing/vector.h
 CMakeFiles/20222_RayTracing.dir/Objeto.cpp.obj
  D:/CG/2022-2-RayTracing/Objeto.cpp

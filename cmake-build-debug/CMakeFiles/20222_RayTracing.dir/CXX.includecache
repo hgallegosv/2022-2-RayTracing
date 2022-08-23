@@ -121,6 +121,8 @@ Camara.h
 D:/CG/2022-2-RayTracing/Camara.h
 Objeto.h
 D:/CG/2022-2-RayTracing/Objeto.h
+Luz.h
+D:/CG/2022-2-RayTracing/Luz.h
 
 D:/CG/2022-2-RayTracing/Camara.h
 cmath
@@ -130,11 +132,9 @@ D:/CG/2022-2-RayTracing/vector.h
 CImg.h
 D:/CG/2022-2-RayTracing/CImg.h
 
-D:/CG/2022-2-RayTracing/Objeto.cpp
-cmath
--
-Objeto.h
-D:/CG/2022-2-RayTracing/Objeto.h
+D:/CG/2022-2-RayTracing/Luz.h
+vector.h
+D:/CG/2022-2-RayTracing/vector.h
 
 D:/CG/2022-2-RayTracing/Objeto.h
 vector.h
@@ -143,16 +143,6 @@ Rayo.h
 D:/CG/2022-2-RayTracing/Rayo.h
 
 D:/CG/2022-2-RayTracing/Rayo.h
-vector.h
-D:/CG/2022-2-RayTracing/vector.h
-
-D:/CG/2022-2-RayTracing/main.cpp
-iostream
--
-Camara.h
-D:/CG/2022-2-RayTracing/Camara.h
-
-D:/CG/2022-2-RayTracing/vector.cpp
 vector.h
 D:/CG/2022-2-RayTracing/vector.h
 

@@ -168,6 +168,33 @@ Camara.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\20222_RayTracing.dir\build.make CMakeFiles/20222_RayTracing.dir/Camara.cpp.s
 .PHONY : Camara.cpp.s
 
+Luz.obj: Luz.cpp.obj
+
+.PHONY : Luz.obj
+
+# target to build an object file
+Luz.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\20222_RayTracing.dir\build.make CMakeFiles/20222_RayTracing.dir/Luz.cpp.obj
+.PHONY : Luz.cpp.obj
+
+Luz.i: Luz.cpp.i
+
+.PHONY : Luz.i
+
+# target to preprocess a source file
+Luz.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\20222_RayTracing.dir\build.make CMakeFiles/20222_RayTracing.dir/Luz.cpp.i
+.PHONY : Luz.cpp.i
+
+Luz.s: Luz.cpp.s
+
+.PHONY : Luz.s
+
+# target to generate assembly for a file
+Luz.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\20222_RayTracing.dir\build.make CMakeFiles/20222_RayTracing.dir/Luz.cpp.s
+.PHONY : Luz.cpp.s
+
 Objeto.obj: Objeto.cpp.obj
 
 .PHONY : Objeto.obj
@@ -261,6 +288,9 @@ help:
 	@echo ... Camara.obj
 	@echo ... Camara.i
 	@echo ... Camara.s
+	@echo ... Luz.obj
+	@echo ... Luz.i
+	@echo ... Luz.s
 	@echo ... Objeto.obj
 	@echo ... Objeto.i
 	@echo ... Objeto.s

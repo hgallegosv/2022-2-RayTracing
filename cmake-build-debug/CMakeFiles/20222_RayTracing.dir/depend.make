@@ -4,9 +4,14 @@
 CMakeFiles/20222_RayTracing.dir/Camara.cpp.obj: ../CImg.h
 CMakeFiles/20222_RayTracing.dir/Camara.cpp.obj: ../Camara.cpp
 CMakeFiles/20222_RayTracing.dir/Camara.cpp.obj: ../Camara.h
+CMakeFiles/20222_RayTracing.dir/Camara.cpp.obj: ../Luz.h
 CMakeFiles/20222_RayTracing.dir/Camara.cpp.obj: ../Objeto.h
 CMakeFiles/20222_RayTracing.dir/Camara.cpp.obj: ../Rayo.h
 CMakeFiles/20222_RayTracing.dir/Camara.cpp.obj: ../vector.h
+
+CMakeFiles/20222_RayTracing.dir/Luz.cpp.obj: ../Luz.cpp
+CMakeFiles/20222_RayTracing.dir/Luz.cpp.obj: ../Luz.h
+CMakeFiles/20222_RayTracing.dir/Luz.cpp.obj: ../vector.h
 
 CMakeFiles/20222_RayTracing.dir/Objeto.cpp.obj: ../Objeto.cpp
 CMakeFiles/20222_RayTracing.dir/Objeto.cpp.obj: ../Objeto.h

@@ -10,7 +10,8 @@
 class Objeto {
 public:
     vec3 color;
-    virtual bool interseccion(Rayo &rayo, float &t) = 0;
+    float kd, ks;
+    virtual bool interseccion(Rayo &rayo, float &t, vec3 &normal) = 0;
 };
 
 class Esfera : public Objeto {
@@ -21,7 +22,7 @@ public:
         cen = _cen;
         radio = _radio;
     }
-    bool interseccion(Rayo &rayo, float &t);
+    bool interseccion(Rayo &rayo, float &t, vec3 &normal);
 };
 
 #endif //INC_20222_RAYTRACING_OBJETO_H

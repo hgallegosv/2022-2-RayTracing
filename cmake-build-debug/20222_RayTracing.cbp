@@ -89,6 +89,12 @@
 		<Unit filename="D:/CG/2022-2-RayTracing/Camara.h">
 			<Option target="20222_RayTracing"/>
 		</Unit>
+		<Unit filename="D:/CG/2022-2-RayTracing/Luz.cpp">
+			<Option target="20222_RayTracing"/>
+		</Unit>
+		<Unit filename="D:/CG/2022-2-RayTracing/Luz.h">
+			<Option target="20222_RayTracing"/>
+		</Unit>
 		<Unit filename="D:/CG/2022-2-RayTracing/Objeto.cpp">
 			<Option target="20222_RayTracing"/>
 		</Unit>
