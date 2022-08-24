@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "20222_RayTracing.pdb"
   "CMakeFiles/20222_RayTracing.dir/Camara.cpp.obj"
   "CMakeFiles/20222_RayTracing.dir/Luz.cpp.obj"
+  "CMakeFiles/20222_RayTracing.dir/Mundo.cpp.obj"
   "CMakeFiles/20222_RayTracing.dir/Objeto.cpp.obj"
   "CMakeFiles/20222_RayTracing.dir/main.cpp.obj"
   "CMakeFiles/20222_RayTracing.dir/vector.cpp.obj"

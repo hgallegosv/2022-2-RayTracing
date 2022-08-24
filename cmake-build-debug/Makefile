@@ -195,6 +195,33 @@ Luz.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\20222_RayTracing.dir\build.make CMakeFiles/20222_RayTracing.dir/Luz.cpp.s
 .PHONY : Luz.cpp.s
 
+Mundo.obj: Mundo.cpp.obj
+
+.PHONY : Mundo.obj
+
+# target to build an object file
+Mundo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\20222_RayTracing.dir\build.make CMakeFiles/20222_RayTracing.dir/Mundo.cpp.obj
+.PHONY : Mundo.cpp.obj
+
+Mundo.i: Mundo.cpp.i
+
+.PHONY : Mundo.i
+
+# target to preprocess a source file
+Mundo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\20222_RayTracing.dir\build.make CMakeFiles/20222_RayTracing.dir/Mundo.cpp.i
+.PHONY : Mundo.cpp.i
+
+Mundo.s: Mundo.cpp.s
+
+.PHONY : Mundo.s
+
+# target to generate assembly for a file
+Mundo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\20222_RayTracing.dir\build.make CMakeFiles/20222_RayTracing.dir/Mundo.cpp.s
+.PHONY : Mundo.cpp.s
+
 Objeto.obj: Objeto.cpp.obj
 
 .PHONY : Objeto.obj
@@ -291,6 +318,9 @@ help:
 	@echo ... Luz.obj
 	@echo ... Luz.i
 	@echo ... Luz.s
+	@echo ... Mundo.obj
+	@echo ... Mundo.i
+	@echo ... Mundo.s
 	@echo ... Objeto.obj
 	@echo ... Objeto.i
 	@echo ... Objeto.s

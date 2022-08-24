@@ -8,7 +8,9 @@
 #include <cmath>
 #include "vector.h"
 #include "CImg.h"
-
+#include "Objeto.h"
+#include "Luz.h"
+using namespace std;
 using namespace cimg_library;
 typedef unsigned char BYTE;
 
@@ -31,6 +33,7 @@ public:
         ye = ze.cruz(xe);
     }
     void renderizar() ;
+    void renderizar(vector<Objeto*> &objetos, vector<Luz*> &luces);
 };
 
 
