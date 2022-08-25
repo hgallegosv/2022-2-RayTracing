@@ -81,17 +81,50 @@ void Camara::renderizar(vector<Objeto*> &objetos, vector<Luz*> &luces) {
                 }
             }
             if (hay_interseccion) {
-                // componente difusa
                 vec3 pi = rayo.ori + t * rayo.dir;
                 //N = normal;
                 L = luz.pos - pi;
                 L.normalize();
-                float factor_difuso = N.punto(L);
-                vec3 difusa(0,0,0);
-                if (factor_difuso > 0) {
-                    difusa = luz.color * pObj->kd * factor_difuso;
+
+                // componente ambiente
+                vec3 ambiente = vec3(0.1,0.1,0.1) * pObj->kd;
+
+                // calcular si hay sombra
+
+                // lanzar rayo hacia la luz
+                Rayo rayo_sombra;
+                rayo_sombra.ori = pi + N*0.01;
+                rayo_sombra.dir = L;
+                bool sombra = false;
+                for(auto pObjeto : objetos){
+                    if (pObjeto->interseccion(rayo_sombra, t_tmp, normal)) {
+                        sombra = true;
+                        break;
+                    }
                 }
-                color = pObj->color * difusa;
+                if (sombra){
+                    color = pObj->color * (ambiente);
+                } else {
+                    // componente difusa
+                    float factor_difuso = N.punto(L);
+                    vec3 difusa(0, 0, 0);
+                    if (factor_difuso > 0) {
+                        difusa = luz.color * pObj->kd * factor_difuso;
+                    }
+
+                    // componente especular
+                    vec3 v = -rayo.dir;
+                    v.normalize();
+                    vec3 r = 2*(L.punto(N))*N - L;
+                    r.normalize();
+                    float factor_especular = r.punto(v);
+                    vec3 especular(0,0,0);
+                    if (factor_especular > 0) {
+                        especular = luz.color * pObj->ks * pow(factor_especular , pObj->n);
+                    }
+                    color = pObj->color * (ambiente + difusa + especular);
+                    color.max_to_one();
+                }
             }
             // pintar el pixel con el color
             (*pImg)(x,h-1-y,0) = (BYTE)(color.x * 255);

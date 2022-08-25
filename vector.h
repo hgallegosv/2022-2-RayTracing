@@ -15,6 +15,7 @@ public:
     vec3 operator+(vec3 v) { return vec3( x+v.x, y+v.y, z+v.z); }
     vec3 operator*(vec3 v) { return vec3( x*v.x, y*v.y, z*v.z); }
     vec3 operator*(float f) { return vec3( x*f, y*f, z*f); }
+    vec3 operator-() { return vec3( -x, -y, -z); }
 
     vec3 cruz(vec3 v) {
         return vec3(y*v.z - z*v.y,
@@ -35,7 +36,12 @@ public:
     }
     // para los colores
     void max_to_one(){
-
+        float max_value = std::max(x, std::max(y,z));
+        if (max_value > 1.0){
+            x = x / max_value;
+            y = y / max_value;
+            z = z / max_value;
+        }
     }
     vec3 operator-(vec3 v){
         return vec3(x-v.x, y-v.y,z-v.z);
