@@ -25,3 +25,12 @@ bool Esfera::interseccion(Rayo &rayo, float &t, vec3 &normal) {
     }
     return false;
 }
+
+bool Plano::interseccion(Rayo &rayo, float &t, vec3 &normal_s) {
+    t = -(normal.punto(rayo.ori) + d) / (normal.punto(rayo.dir));
+    if (t > 0) {
+        normal_s = normal;
+        return true;
+    }
+    return false;
+}

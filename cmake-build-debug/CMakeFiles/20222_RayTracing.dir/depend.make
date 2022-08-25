@@ -13,6 +13,15 @@ CMakeFiles/20222_RayTracing.dir/Luz.cpp.obj: ../Luz.cpp
 CMakeFiles/20222_RayTracing.dir/Luz.cpp.obj: ../Luz.h
 CMakeFiles/20222_RayTracing.dir/Luz.cpp.obj: ../vector.h
 
+CMakeFiles/20222_RayTracing.dir/Mundo.cpp.obj: ../CImg.h
+CMakeFiles/20222_RayTracing.dir/Mundo.cpp.obj: ../Camara.h
+CMakeFiles/20222_RayTracing.dir/Mundo.cpp.obj: ../Luz.h
+CMakeFiles/20222_RayTracing.dir/Mundo.cpp.obj: ../Mundo.cpp
+CMakeFiles/20222_RayTracing.dir/Mundo.cpp.obj: ../Mundo.h
+CMakeFiles/20222_RayTracing.dir/Mundo.cpp.obj: ../Objeto.h
+CMakeFiles/20222_RayTracing.dir/Mundo.cpp.obj: ../Rayo.h
+CMakeFiles/20222_RayTracing.dir/Mundo.cpp.obj: ../vector.h
+
 CMakeFiles/20222_RayTracing.dir/Objeto.cpp.obj: ../Objeto.cpp
 CMakeFiles/20222_RayTracing.dir/Objeto.cpp.obj: ../Objeto.h
 CMakeFiles/20222_RayTracing.dir/Objeto.cpp.obj: ../Rayo.h
@@ -20,6 +29,10 @@ CMakeFiles/20222_RayTracing.dir/Objeto.cpp.obj: ../vector.h
 
 CMakeFiles/20222_RayTracing.dir/main.cpp.obj: ../CImg.h
 CMakeFiles/20222_RayTracing.dir/main.cpp.obj: ../Camara.h
+CMakeFiles/20222_RayTracing.dir/main.cpp.obj: ../Luz.h
+CMakeFiles/20222_RayTracing.dir/main.cpp.obj: ../Mundo.h
+CMakeFiles/20222_RayTracing.dir/main.cpp.obj: ../Objeto.h
+CMakeFiles/20222_RayTracing.dir/main.cpp.obj: ../Rayo.h
 CMakeFiles/20222_RayTracing.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/20222_RayTracing.dir/main.cpp.obj: ../vector.h
 

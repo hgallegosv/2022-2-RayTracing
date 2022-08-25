@@ -13,6 +13,15 @@ CMakeFiles/20222_RayTracing.dir/Luz.cpp.obj
  D:/CG/2022-2-RayTracing/Luz.cpp
  D:/CG/2022-2-RayTracing/Luz.h
  D:/CG/2022-2-RayTracing/vector.h
+CMakeFiles/20222_RayTracing.dir/Mundo.cpp.obj
+ D:/CG/2022-2-RayTracing/CImg.h
+ D:/CG/2022-2-RayTracing/Camara.h
+ D:/CG/2022-2-RayTracing/Luz.h
+ D:/CG/2022-2-RayTracing/Mundo.cpp
+ D:/CG/2022-2-RayTracing/Mundo.h
+ D:/CG/2022-2-RayTracing/Objeto.h
+ D:/CG/2022-2-RayTracing/Rayo.h
+ D:/CG/2022-2-RayTracing/vector.h
 CMakeFiles/20222_RayTracing.dir/Objeto.cpp.obj
  D:/CG/2022-2-RayTracing/Objeto.cpp
  D:/CG/2022-2-RayTracing/Objeto.h
@@ -21,6 +30,10 @@ CMakeFiles/20222_RayTracing.dir/Objeto.cpp.obj
 CMakeFiles/20222_RayTracing.dir/main.cpp.obj
  D:/CG/2022-2-RayTracing/CImg.h
  D:/CG/2022-2-RayTracing/Camara.h
+ D:/CG/2022-2-RayTracing/Luz.h
+ D:/CG/2022-2-RayTracing/Mundo.h
+ D:/CG/2022-2-RayTracing/Objeto.h
+ D:/CG/2022-2-RayTracing/Rayo.h
  D:/CG/2022-2-RayTracing/main.cpp
  D:/CG/2022-2-RayTracing/vector.h
 CMakeFiles/20222_RayTracing.dir/vector.cpp.obj
