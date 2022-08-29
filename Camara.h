@@ -34,6 +34,8 @@ public:
     }
     void renderizar() ;
     void renderizar(vector<Objeto*> &objetos, vector<Luz*> &luces);
+
+    vec3 calcularColor(Rayo rayo, vector<Objeto*> &objetos, vector<Luz*> &luces, int prof);
 };
 
 
