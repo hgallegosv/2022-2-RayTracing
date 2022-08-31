@@ -52,7 +52,7 @@ for (int x=0; x < w; x++){
 }
 
 void Camara::renderizar(vector<Objeto*> &objetos, vector<Luz*> &luces) {
-    pImg = new CImg<BYTE>(w, h, 1, 10);
+    pImg = new CImg<BYTE>(w, h, 1, 3);
     CImgDisplay dis_img((*pImg), "Imagen RayCasting en Perspectiva ");
     vec3 color;
     Rayo rayo;
@@ -81,6 +81,7 @@ void Camara::renderizar(vector<Objeto*> &objetos, vector<Luz*> &luces) {
     while (!dis_img.is_closed()) {
         dis_img.wait();
     }
+    pImg->save("prueba1.bmp");
 }
 
 vec3 Camara::calcularColor(Rayo rayo, vector<Objeto*> &objetos, vector<Luz*> &luces, int prof){
@@ -159,7 +160,7 @@ vec3 Camara::calcularColor(Rayo rayo, vector<Objeto*> &objetos, vector<Luz*> &lu
             rayo_reflexivo.ori = pi + N * 0.01;
             rayo_reflexivo.dir = 2 * (v.punto(N)) * N - v;
             vec3 color_reflexivo = calcularColor(rayo_reflexivo, objetos, luces, prof + 1);
-            color = color + color_reflexivo;
+            color = color + color_reflexivo * pObj->ks;
             color.max_to_one();
         }
 

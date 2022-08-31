@@ -1,8 +1,8 @@
-# Install script for directory: D:/workspace/CG20222/2022-2-RayTracing
+# Install script for directory: D:/CG/2022-2-RayTracing
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/2022_2_RayTracing")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/20222_RayTracing")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/workspace/CG20222/2022-2-RayTracing/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/CG/2022-2-RayTracing/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
