@@ -6,7 +6,7 @@
 void Mundo::Escenario1(){
     camara.center=vec3(0,0,0);
     camara.up=vec3(0,1,0);
-    camara.eye=vec3(10,10,30);
+    camara.eye=vec3(10,5,20);
     camara._near=4;
     camara.fov = 60;
     camara.w = 600;
@@ -24,12 +24,16 @@ void Mundo::Escenario1(){
     pEsf->kd = 0.9;
     pEsf->ks = 0.5;
     pEsf->n = 8;
+    pEsf->idr = 1.5;
 
     Esfera *pEsf2 = new Esfera(vec3(3,9,0), 4);
     pEsf2->color = vec3(1,0,0);
     pEsf2->kd = 0.9;
     pEsf2->ks = 1;
     pEsf2->n = 32;
+    Esfera *pEsf3 = new Esfera(vec3(3,3,-6), 4);
+    pEsf3->color = vec3(1,1,0);
+    pEsf3->kd = 0.9;
 
     Plano *pPlano = new Plano(vec3(0,1,0),2);
     pPlano->color=vec3(0,0,1);
@@ -43,6 +47,7 @@ void Mundo::Escenario1(){
 
     objetos.emplace_back( pEsf );
     objetos.emplace_back( pEsf2 );
+    objetos.emplace_back( pEsf3 );
     objetos.emplace_back( pPlano );
     //objetos.emplace_back( pPlano2 );
 

@@ -50,5 +50,6 @@ public:
 
 vec3 operator/(float f, vec3 v);
 vec3 operator*(float f, vec3 v);
+float clamp(float menor, float mayor, float valor);
 
 #endif //INC_20222_RAYTRACING_VECTOR_H

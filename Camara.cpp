@@ -114,7 +114,8 @@ vec3 Camara::calcularColor(Rayo rayo, vector<Objeto*> &objetos, vector<Luz*> &lu
 
         // componente ambiente
         vec3 ambiente = vec3(0.1,0.1,0.1) * pObj->kd;
-
+        vec3 difusa(0, 0, 0);
+        vec3 especular(0,0,0);
         // calcular si hay sombra
         // lanzar rayo hacia la luz
         Rayo rayo_sombra;
@@ -131,39 +132,83 @@ vec3 Camara::calcularColor(Rayo rayo, vector<Objeto*> &objetos, vector<Luz*> &lu
             }
         }
         if (sombra){
-            color = pObj->color * (ambiente);
+            //color = pObj->color * (ambiente);
         } else {
             // componente difusa
             float factor_difuso = N.punto(L);
-            vec3 difusa(0, 0, 0);
             if (factor_difuso > 0) {
                 difusa = luz.color * pObj->kd * factor_difuso;
             }
-
             // componente especular
-
             vec3 r = 2*(L.punto(N))*N - L;
             r.normalize();
             float factor_especular = r.punto(v);
-            vec3 especular(0,0,0);
             if (factor_especular > 0) {
                 especular = luz.color * pObj->ks * pow(factor_especular , pObj->n);
             }
-            color = pObj->color * (ambiente + difusa + especular);
-            color.max_to_one();
         }
 
-        // Rayos Reflexivos
-        // -----------
-        if (pObj->ks > 0) {
+        float kr = pObj->ks;
+        float kt = 0;
+        bool outside = rayo.dir.punto(N) < 0;
+        vec3 bias = 0.001 * N;
+        vec3 color_reflexivo(0,0,0);
+        vec3 color_refractivo(0,0,0);
+
+        if(pObj->idr > 0) {
+            fresnel(rayo.dir, N, pObj->idr, kr);
+            if (kr < 1) {
+                kt = 1- kr;
+                Rayo rayo_refractivo;
+                rayo_refractivo.ori = outside ? pi - bias : pi + bias;
+                rayo_refractivo.dir = refract(rayo.dir, N, pObj->idr);
+                rayo_refractivo.dir.normalize();
+                color_refractivo = calcularColor(rayo_refractivo, objetos, luces, prof+1);
+            }
+        }
+        if (kr > 0) {
             Rayo rayo_reflexivo;
-            rayo_reflexivo.ori = pi + N * 0.01;
+            rayo_reflexivo.ori = outside ? pi - bias : pi + bias;
             rayo_reflexivo.dir = 2 * (v.punto(N)) * N - v;
-            vec3 color_reflexivo = calcularColor(rayo_reflexivo, objetos, luces, prof + 1);
-            color = color + color_reflexivo * pObj->ks;
-            color.max_to_one();
+            rayo_reflexivo.dir.normalize();
+            color_reflexivo = calcularColor(rayo_reflexivo, objetos, luces, prof + 1);
         }
-
+        color = pObj->color * (ambiente + difusa + especular);
+        color = color + color_reflexivo* kr + color_refractivo*kt;
+        color.max_to_one();
     }
     return color;
+}
+
+vec3 Camara::refract(vec3 I, vec3 N, float ior)
+{
+    float cosi = clamp(-1, 1, I.punto(N));
+    float etai = 1, etat = ior;
+    vec3 n = N;
+    if (cosi < 0) { cosi = -cosi; } else { std::swap(etai, etat); n= -N; }
+    float eta = etai / etat;
+    float k = 1 - eta * eta * (1 - cosi * cosi);
+    return k < 0 ? vec3(0,0,0) : eta * I + (eta * cosi - sqrtf(k)) * n;
+}
+
+void Camara::fresnel(vec3 I, vec3 N, float &ior, float &kr)
+{
+    float cosi = clamp(-1, 1, I.punto(N));
+    float etai = 1, etat = ior;
+    if (cosi > 0) { std::swap(etai, etat); }
+    // Compute sini using Snell's law
+    float sint = etai / etat * sqrtf(std::max(0.f, 1 - cosi * cosi));
+    // Total internal reflection
+    if (sint >= 1) {
+        kr = 1;
+    }
+    else {
+        float cost = sqrtf(std::max(0.f, 1 - sint * sint));
+        cosi = fabsf(cosi);
+        float Rs = ((etat * cosi) - (etai * cost)) / ((etat * cosi) + (etai * cost));
+        float Rp = ((etai * cosi) - (etat * cost)) / ((etai * cosi) + (etat * cost));
+        kr = (Rs * Rs + Rp * Rp) / 2;
+    }
+    // As a consequence of the conservation of energy, transmittance is given by:
+    // kt = 1 - kr;
 }

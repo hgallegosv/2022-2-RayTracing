@@ -10,7 +10,10 @@
 class Objeto {
 public:
     vec3 color;
-    float kd, ks, n;
+    Objeto(){
+        kd = ks = n = idr = 0;
+    }
+    float kd, ks, n, idr; // indice de refraccion
     virtual bool interseccion(Rayo &rayo, float &t, vec3 &normal) = 0;
 };
 
