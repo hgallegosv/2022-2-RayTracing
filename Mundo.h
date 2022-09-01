@@ -18,5 +18,6 @@ public:
     Camara camara;
 
     void Escenario1();
+    void Escenario2();
 };
 #endif //INC_20222_RAYTRACING_MUNDO_H

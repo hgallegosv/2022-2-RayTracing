@@ -22,6 +22,16 @@ public:
     vec3 xe, ye, ze;
     CImg<BYTE> *pImg;
 
+    void crear(vec3 _center, vec3 _up, vec3 _eye, float _near_, float _fov, float _w, float _h) {
+        center = _center;
+        up = _up;
+        eye = _eye;
+        _near = _near_;
+        fov = _fov;
+        w = _w;
+        h = _h;
+    }
+
     void inicializar() {
         f = _near;
         a = 2 * f * tan(fov*M_PI/180/2);

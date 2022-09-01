@@ -13,15 +13,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0a655b1d-5d21-40fe-a400-d7f74a144116" name="Changes" comment="Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Camara.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Camara.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Camara.h" beforeDir="false" afterPath="$PROJECT_DIR$/Camara.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Luz.h" beforeDir="false" afterPath="$PROJECT_DIR$/Luz.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mundo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Mundo.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mundo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Mundo.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objeto.h" beforeDir="false" afterPath="$PROJECT_DIR$/Objeto.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/vector.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vector.h" beforeDir="false" afterPath="$PROJECT_DIR$/vector.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,14 +47,10 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
     <configuration name="20222_RayTracing" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="20222_RayTracing" TARGET_NAME="20222_RayTracing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="20222_RayTracing" RUN_TARGET_NAME="20222_RayTracing">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -76,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1661808520643</updated>
       <workItem from="1661808525136" duration="1528000" />
-      <workItem from="1662056295941" duration="3304000" />
+      <workItem from="1662056295941" duration="6337000" />
     </task>
     <servers />
   </component>

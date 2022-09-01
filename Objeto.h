@@ -14,6 +14,9 @@ public:
         kd = ks = n = idr = 0;
     }
     float kd, ks, n, idr; // indice de refraccion
+    void set(vec3 _color, float _kd, float _ks=0, float _n=0, float _idr=0) {
+        color = _color; kd = _kd; ks = _ks; n = _n; idr = _idr;
+    }
     virtual bool interseccion(Rayo &rayo, float &t, vec3 &normal) = 0;
 };
 
