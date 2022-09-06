@@ -3,6 +3,7 @@
 
 int main() {
     Mundo mundo;
-    mundo.Escenario1();
+    //mundo.Escenario1();
+    mundo.Escenario3();
     return 0;
 }

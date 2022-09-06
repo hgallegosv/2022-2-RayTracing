@@ -38,4 +38,14 @@ public:
     Plano(vec3 _normal, float _d) { normal = _normal; d=_d;}
     bool interseccion(Rayo &rayo, float &t, vec3 &normal);
 };
+
+class Cilindro: public Objeto {
+public:
+    vec3 pa, pb;
+    float ra;
+    Cilindro(vec3 _pa, vec3 _pb, float _ra) {
+        pa = _pa; pb = _pb; ra = _ra;
+    }
+    bool interseccion(Rayo &rayo, float &t, vec3 &normal);
+};
 #endif //INC_20222_RAYTRACING_OBJETO_H

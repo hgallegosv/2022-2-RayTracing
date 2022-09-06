@@ -7,6 +7,10 @@
 
 #include <cmath>
 
+template <typename T> int sgn(T val) {
+    return (T(0) < val) - (val < T(0));
+}
+
 class vec3 {
 public:
     float x,y,z;
@@ -14,7 +18,9 @@ public:
     vec3(float _x, float _y, float _z) {x=_x;y=_y;z=_z;}
     vec3 operator+(vec3 v) { return vec3( x+v.x, y+v.y, z+v.z); }
     vec3 operator*(vec3 v) { return vec3( x*v.x, y*v.y, z*v.z); }
+    vec3 operator/(vec3 v) { return vec3( x/v.x, y/v.y, z/v.z); }
     vec3 operator*(float f) { return vec3( x*f, y*f, z*f); }
+    vec3 operator/(float f) { return vec3( x/f, y/f, z/f); }
     vec3 operator-() { return vec3( -x, -y, -z); }
 
     vec3 cruz(vec3 v) {
@@ -51,5 +57,10 @@ public:
 vec3 operator/(float f, vec3 v);
 vec3 operator*(float f, vec3 v);
 float clamp(float menor, float mayor, float valor);
+
+
+vec3 abs(vec3 &v);
+vec3 sign(vec3 &v);
+vec3 step(vec3 v1, vec3 v2);
 
 #endif //INC_20222_RAYTRACING_VECTOR_H
