@@ -13,6 +13,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0a655b1d-5d21-40fe-a400-d7f74a144116" name="Changes" comment="Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Camara.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Camara.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mundo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Mundo.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objeto.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Objeto.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +70,7 @@
       <workItem from="1662056295941" duration="6337000" />
       <workItem from="1662062699639" duration="55000" />
       <workItem from="1662477665012" duration="3764000" />
+      <workItem from="1662566926372" duration="3624000" />
     </task>
     <servers />
   </component>
@@ -84,5 +88,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Camara.cpp</url>
+          <line>70</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

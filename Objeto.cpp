@@ -27,12 +27,18 @@ bool Esfera::interseccion(Rayo &rayo, float &t, vec3 &normal) {
 }
 
 bool Plano::interseccion(Rayo &rayo, float &t, vec3 &normal_s) {
-    t = -(normal.punto(rayo.ori) + d) / (normal.punto(rayo.dir));
+    /*t = -(normal.punto(rayo.ori) + d) / (normal.punto(rayo.dir));
     if (t > 0) {
         normal_s = normal;
         return true;
     }
-    return false;
+    return false;*/
+    float nd = normal.punto(rayo.dir);
+    if (nd == 0) return false;
+    t = (normal*d - rayo.ori).punto(normal) / nd;
+    if (t < 0) return false;
+    normal_s = nd > 0 ? -normal : normal;
+    return true;
 }
 
 bool Cilindro::interseccion(Rayo &rayo, float &t, vec3 &normal) {

@@ -67,8 +67,9 @@ void Camara::renderizar(vector<Objeto*> &objetos, vector<Luz*> &luces) {
         for (int y=0; y < h; y++){
             rayo.dir = -f*ze + a*(y/h -0.5)*ye + b*(x/w-0.5)*xe;
             rayo.dir.normalize();
-            // color = vec3(1,1,1);
-
+            if (x ==600 and y==300){
+                float tmp = 6;
+            }
             color = calcularColor(rayo, objetos, luces, 1);
 
             // pintar el pixel con el color
@@ -111,6 +112,7 @@ vec3 Camara::calcularColor(Rayo rayo, vector<Objeto*> &objetos, vector<Luz*> &lu
         vec3 pi = rayo.ori + t * rayo.dir;
         //N = normal;
         L = luz.pos - pi;
+        float longitud = L.modulo();
         L.normalize();
 
         // componente ambiente
@@ -128,8 +130,10 @@ vec3 Camara::calcularColor(Rayo rayo, vector<Objeto*> &objetos, vector<Luz*> &lu
 
         for(auto pObjeto : objetos){
             if (pObjeto->interseccion(rayo_sombra, t_tmp, normal)) {
-                sombra = true;
-                break;
+                if (t_tmp <= longitud) {
+                    sombra = true;
+                    break;
+                }
             }
         }
         if (sombra){
