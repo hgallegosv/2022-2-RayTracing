@@ -67,8 +67,9 @@ void Camara::renderizar(vector<Objeto*> &objetos, vector<Luz*> &luces) {
         for (int y=0; y < h; y++){
             rayo.dir = -f*ze + a*(y/h -0.5)*ye + b*(x/w-0.5)*xe;
             rayo.dir.normalize();
-            if (x ==600 and y==300){
+            if (x == 124 and y==300){
                 float tmp = 6;
+                color = vec3(1,0,0);
             }
             color = calcularColor(rayo, objetos, luces, 1);
 
@@ -173,7 +174,7 @@ vec3 Camara::calcularColor(Rayo rayo, vector<Objeto*> &objetos, vector<Luz*> &lu
         }
         if (kr > 0) {
             Rayo rayo_reflexivo;
-            rayo_reflexivo.ori = outside ? pi - bias : pi + bias;
+            rayo_reflexivo.ori = outside ? pi + bias : pi - bias;
             rayo_reflexivo.dir = 2 * (v.punto(N)) * N - v;
             rayo_reflexivo.dir.normalize();
             color_reflexivo = calcularColor(rayo_reflexivo, objetos, luces, prof + 1);

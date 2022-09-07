@@ -66,32 +66,34 @@ void Mundo::Escenario2(){
 }
 
 void Mundo::Escenario3(){
-    camara.crear(vec3(0,0,0), vec3(0,1,0), vec3(3,15,40), 4, 60, 800, 600);
+    camara.crear(vec3(0,0,0), vec3(0,1,0), vec3(3,20,50), 4, 60, 800, 600);
     camara.inicializar();
 
     Luz *pLuz = new Luz(vec3(10, 30, 20), vec3(1,1,1));
+    Luz *pLuz2 = new Luz(vec3(-10, 30, 20), vec3(1,1,1));
     luces.emplace_back(pLuz);
+    luces.emplace_back(pLuz2);
 
     Esfera *pEsf = new Esfera(vec3(3,3,0), 3);
     pEsf->set(vec3(0.1,1,0.1), 0.9, 0.5, 8, 1.5);
 
     Esfera *pEsf2 = new Esfera(vec3(6,6,3), 5);
-    pEsf2->set(vec3(1,0.1,0.1), 0.1, 1, 32);
+    pEsf2->set(vec3(1,1,1), 0.5, 1, 32);
 
     Esfera *pEsf3 = new Esfera(vec3(4,3,-6), 5);
     pEsf3->set(vec3(1,1,0.1), 0.9);
 
-    Plano *pPlano = new Plano(vec3(0,1,0),2);
+    Plano *pPlano = new Plano(vec3(0,1,0),0);
     pPlano->set(vec3(0.1,0.1,1), 0.7);
 
-    Plano *pPlano2 = new Plano(vec3(1,0,0),-20);
-    pPlano2->set(vec3(0,1,0), 0.7);
+    Plano *pPlano2 = new Plano(vec3(1,0,0),-10);
+    pPlano2->set(vec3(1,1,1), 0.2, 1, 8);
 
-    Cilindro *pCil1 = new Cilindro(vec3(0,2,10), vec3(0,10,10), 6);
+    Cilindro *pCil1 = new Cilindro(vec3(1,2,10), vec3(1,10,10), 6);
     pCil1->set(vec3(0.1,1,1), 0, 0.9, 8, 1.5);
 
     objetos.emplace_back( pEsf );
-    //objetos.emplace_back( pEsf2 );
+    objetos.emplace_back( pEsf2 );
     objetos.emplace_back( pEsf3 );
     objetos.emplace_back( pPlano );
     objetos.emplace_back( pPlano2 );
