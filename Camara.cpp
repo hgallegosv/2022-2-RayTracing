@@ -66,6 +66,7 @@ void Camara::renderizar(vector<Objeto*> &objetos, vector<Luz*> &luces) {
     for (int x=0; x < w; x++){
         for (int y=0; y < h; y++){
             rayo.dir = -f*ze + a*(y/h -0.5)*ye + b*(x/w-0.5)*xe;
+            rayo.dir.normalize();
             // color = vec3(1,1,1);
 
             color = calcularColor(rayo, objetos, luces, 1);
