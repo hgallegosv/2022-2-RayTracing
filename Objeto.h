@@ -6,11 +6,14 @@
 #define INC_20222_RAYTRACING_OBJETO_H
 #include "vector.h"
 #include "Rayo.h"
+#include "Luz.h"
 
 class Objeto {
 public:
     vec3 color;
+    Luz *luz;
     Objeto(){
+        luz = nullptr;
         kd = ks = n = idr = 0;
     }
     float kd, ks, n, idr; // indice de refraccion
@@ -18,6 +21,7 @@ public:
         color = _color; kd = _kd; ks = _ks; n = _n; idr = _idr;
     }
     virtual bool interseccion(Rayo &rayo, float &t, vec3 &normal) = 0;
+    virtual vec3 getColor(Rayo &rayo) { return color; }
 };
 
 class Esfera : public Objeto {
@@ -29,6 +33,7 @@ public:
         radio = _radio;
     }
     bool interseccion(Rayo &rayo, float &t, vec3 &normal);
+    vec3 getColor(Rayo &rayo);
 };
 
 class Plano : public Objeto {

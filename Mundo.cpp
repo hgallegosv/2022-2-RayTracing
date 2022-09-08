@@ -38,8 +38,10 @@ void Mundo::Escenario2(){
     camara.crear(vec3(0,0,0), vec3(0,1,0), vec3(3,15,30), 4, 60, 800, 600);
     camara.inicializar();
 
-    Luz *pLuz = new Luz(vec3(10, 30, 20), vec3(1,1,1));
+    Luz *pLuz = new Luz(vec3(5, 5, 5), vec3(1,1,1));
     luces.emplace_back(pLuz);
+    Esfera *pEsfLuz = new Esfera( pLuz->pos, 2);
+    pEsfLuz->set(pLuz->color, 0);
 
     Esfera *pEsf = new Esfera(vec3(3,3,0), 5);
     pEsf->set(vec3(0,1,0), 0.9, 0.5, 8, 1.5);
@@ -56,6 +58,7 @@ void Mundo::Escenario2(){
     Plano *pPlano2 = new Plano(vec3(1,0,0),20);
     pPlano2->set(vec3(0,1,0), 0.7,0.5,8);
 
+    objetos.emplace_back( pEsfLuz );
     objetos.emplace_back( pEsf );
     objetos.emplace_back( pEsf2 );
     objetos.emplace_back( pEsf3 );
@@ -69,10 +72,11 @@ void Mundo::Escenario3(){
     camara.crear(vec3(0,0,0), vec3(0,1,0), vec3(3,20,50), 4, 60, 800, 600);
     camara.inicializar();
 
-    Luz *pLuz = new Luz(vec3(10, 30, 20), vec3(1,1,1));
-    Luz *pLuz2 = new Luz(vec3(-10, 30, 20), vec3(1,1,1));
+    Luz *pLuz = new Luz(vec3(20, 5, 0), vec3(1,1,1));
     luces.emplace_back(pLuz);
-    luces.emplace_back(pLuz2);
+    Esfera *pEsfLuz = new Esfera( pLuz->pos, 2);
+    pEsfLuz->set(pLuz->color, 0);
+    pEsfLuz->luz = pLuz;
 
     Esfera *pEsf = new Esfera(vec3(3,3,0), 3);
     pEsf->set(vec3(0.1,1,0.1), 0.9, 0.5, 8, 1.5);
@@ -92,6 +96,7 @@ void Mundo::Escenario3(){
     Cilindro *pCil1 = new Cilindro(vec3(1,2,10), vec3(1,10,10), 6);
     pCil1->set(vec3(0.1,1,1), 0, 0.9, 8, 1.5);
 
+    objetos.emplace_back( pEsfLuz );
     objetos.emplace_back( pEsf );
     objetos.emplace_back( pEsf2 );
     objetos.emplace_back( pEsf3 );

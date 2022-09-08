@@ -16,6 +16,7 @@
       <change beforePath="$PROJECT_DIR$/Camara.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Camara.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mundo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Mundo.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Objeto.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Objeto.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objeto.h" beforeDir="false" afterPath="$PROJECT_DIR$/Objeto.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,16 +44,11 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RayTracing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
     <configuration name="20222_RayTracing" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="20222_RayTracing" TARGET_NAME="20222_RayTracing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="20222_RayTracing" RUN_TARGET_NAME="20222_RayTracing">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -70,7 +66,8 @@
       <workItem from="1662056295941" duration="6337000" />
       <workItem from="1662062699639" duration="55000" />
       <workItem from="1662477665012" duration="3764000" />
-      <workItem from="1662566926372" duration="6682000" />
+      <workItem from="1662566926372" duration="6831000" />
+      <workItem from="1662660372118" duration="5445000" />
     </task>
     <servers />
   </component>

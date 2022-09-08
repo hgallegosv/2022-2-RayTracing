@@ -67,7 +67,7 @@ void Camara::renderizar(vector<Objeto*> &objetos, vector<Luz*> &luces) {
         for (int y=0; y < h; y++){
             rayo.dir = -f*ze + a*(y/h -0.5)*ye + b*(x/w-0.5)*xe;
             rayo.dir.normalize();
-            if (x == 124 and y==300){
+            if (x == 512 and y==300){
                 float tmp = 6;
                 color = vec3(1,0,0);
             }
@@ -88,14 +88,14 @@ void Camara::renderizar(vector<Objeto*> &objetos, vector<Luz*> &luces) {
 }
 
 vec3 Camara::calcularColor(Rayo rayo, vector<Objeto*> &objetos, vector<Luz*> &luces, int prof){
-    vec3 color(1,1,1);
+    vec3 color(0,0,0);
     float t_tmp, t;
     Objeto *pObj;
     Luz luz = *(luces[0]);
     vec3 normal, N, L;
     bool hay_interseccion;
     if ( prof > 7) {
-        return vec3(1,1,1);
+        return color;
     }
     hay_interseccion = false;
     t = 100000;
@@ -109,7 +109,11 @@ vec3 Camara::calcularColor(Rayo rayo, vector<Objeto*> &objetos, vector<Luz*> &lu
             }
         }
     }
-    if (hay_interseccion) {
+    if (hay_interseccion and pObj->luz != nullptr) {
+        //color = pObj->getColor(rayo);
+        color = pObj->color;
+
+    } else if (hay_interseccion) {
         vec3 pi = rayo.ori + t * rayo.dir;
         //N = normal;
         L = luz.pos - pi;
@@ -130,7 +134,7 @@ vec3 Camara::calcularColor(Rayo rayo, vector<Objeto*> &objetos, vector<Luz*> &lu
         v.normalize();
 
         for(auto pObjeto : objetos){
-            if (pObjeto->interseccion(rayo_sombra, t_tmp, normal)) {
+            if (pObjeto->luz == nullptr and pObjeto->interseccion(rayo_sombra, t_tmp, normal)) {
                 if (t_tmp <= longitud) {
                     sombra = true;
                     break;

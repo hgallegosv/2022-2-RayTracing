@@ -26,6 +26,27 @@ bool Esfera::interseccion(Rayo &rayo, float &t, vec3 &normal) {
     return false;
 }
 
+vec3 Esfera::getColor(Rayo &rayo) {
+    vec3 d = rayo.dir;
+    vec3 o_c = rayo.ori - cen;
+    float a = d.punto(d);
+    float b = 2 * d.punto(o_c);
+    float c = o_c.punto(o_c) - radio*radio;
+
+    float det = b*b - 4*a*c;
+    if ( det > 0) {
+        float t1 = (-b - sqrt(det)) / (2*a);
+        float t2 = (-b + sqrt(det)) / (2*a);
+        vec3 p1 = rayo.ori + rayo.dir * t1;
+        vec3 p2 = rayo.ori + rayo.dir * t2;
+        float distancia = (p2-p1).modulo();
+        float sigma_a = 0.1;
+        //float transmision = exp(-distancia * sigma_a);
+        return color * (1-distancia/radio);
+    }
+    return color;
+}
+
 bool Plano::interseccion(Rayo &rayo, float &t, vec3 &normal_s) {
     /*t = -(normal.punto(rayo.ori) + d) / (normal.punto(rayo.dir));
     if (t > 0) {
@@ -37,8 +58,8 @@ bool Plano::interseccion(Rayo &rayo, float &t, vec3 &normal_s) {
     if (nd == 0) return false;
     t = (normal*d - rayo.ori).punto(normal) / nd;
     if (t < 0) return false;
-    normal_s = nd > 0 ? -normal : normal;
-    //normal_s = normal;
+    //normal_s = nd > 0 ? -normal : normal;
+    normal_s = normal;
     return true;
 }
 
