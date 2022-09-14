@@ -20,5 +20,6 @@ public:
     void Escenario1();
     void Escenario2();
     void Escenario3();
+    void Escenario4();
 };
 #endif //INC_20222_RAYTRACING_MUNDO_H

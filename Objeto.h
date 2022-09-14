@@ -14,11 +14,12 @@ public:
     Luz *luz;
     Objeto(){
         luz = nullptr;
-        kd = ks = n = idr = 0;
+        kd = ks = kr = n = idr = 0;
     }
-    float kd, ks, n, idr; // indice de refraccion
-    void set(vec3 _color, float _kd, float _ks=0, float _n=0, float _idr=0) {
-        color = _color; kd = _kd; ks = _ks; n = _n; idr = _idr;
+    // kr constante de refleccion
+    float kd, ks, kr, n, idr; // indice de refraccion
+    void set(vec3 _color, float _kd, float _ks=0, float _n=0, float _idr=0, float _kr=0) {
+        color = _color; kd = _kd; ks = _ks; n = _n; idr = _idr; kr = _kr;
     }
     virtual bool interseccion(Rayo &rayo, float &t, vec3 &normal) = 0;
     virtual vec3 getColor(Rayo &rayo) { return color; }
