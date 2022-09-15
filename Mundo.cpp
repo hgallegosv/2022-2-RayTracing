@@ -126,20 +126,20 @@ void Mundo::Escenario4(){
     objetos.emplace_back( pEsfLuz2 );
 
     Plano *pPlano = new Plano(vec3(0,1,0),0);
-    pPlano->set(vec3(0.1,0.1,1), 0.7);
+    pPlano->set(vec3(0,0,1), 0.5, 0, 8, 0, 0.4);
 
     Cilindro *pCil1 = new Cilindro(vec3(1,1,10), vec3(1,15,1), 10);
     pCil1->set(vec3(1,1,1), 0, 0.1, 8, 1.5, 1);
 
     Cilindro *pCil2 = new Cilindro(vec3(1,1.1,10), vec3(1,14.9,1), 9);
-    pCil2->set(vec3(1,1,1), 0, 0.1, 8, 1.5, 1);
+    pCil2->set(vec3(1,1,1), 0, 0.1, 8, 1, 1);
 
 
     Plano *pPlano2 = new Plano(vec3(1,0,0),-10);
     pPlano2->set(vec3(1,1,1), 0, 0, 8, 0, 1);
 
     objetos.emplace_back( pPlano );
-    objetos.emplace_back( pPlano2 );
+    //objetos.emplace_back( pPlano2 );
     objetos.emplace_back(pCil1);
     objetos.emplace_back(pCil2);
 

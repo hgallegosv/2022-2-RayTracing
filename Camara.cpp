@@ -54,25 +54,31 @@ for (int x=0; x < w; x++){
 void Camara::renderizar(vector<Objeto*> &objetos, vector<Luz*> &luces) {
     pImg = new CImg<BYTE>(w, h, 1, 3);
     CImgDisplay dis_img((*pImg), "Imagen RayCasting en Perspectiva ");
-    vec3 color;
+    vec3 color, color_m;
     Rayo rayo;
     rayo.ori = eye;
     float t_tmp, t;
     Objeto *pObj;
     Luz luz = *(luces[0]);
     vec3 normal, N, L;
+    float muestras = 3;
     bool hay_interseccion;
     // Para cada pixel lanzar un rayo
     for (int x=0; x < w; x++){
         for (int y=0; y < h; y++){
-            rayo.dir = -f*ze + a*(y/h -0.5)*ye + b*(x/w-0.5)*xe;
-            rayo.dir.normalize();
-            if (x == 420 and y== h-222){
-                float tmp = 6;
-                color = vec3(1,0,0);
+            color_m = vec3(0,0,0);
+            for (int m=0; m < muestras; m++) {
+                float dx = rand() % 10 / 10.0;
+                float dy = rand() % 10 / 10.0;
+                rayo.dir = -f*ze + a*((y+dy)/h-0.5)*ye + b*((x+dx)/w-0.5)*xe;
+                rayo.dir.normalize();
+                if (x == 420 and y== h-222){
+                    float tmp = 6;
+                    color_m = vec3(1,0,0);
+                }
+                color_m = color_m + calcularColor(rayo, objetos, luces, 1);
             }
-            color = calcularColor(rayo, objetos, luces, 1);
-
+            color = color_m / muestras;
             // pintar el pixel con el color
             (*pImg)(x,h-1-y,0) = (BYTE)(color.x * 255);
             (*pImg)(x,h-1-y,1) = (BYTE)(color.y * 255);
@@ -110,8 +116,10 @@ vec3 Camara::calcularColor(Rayo rayo, vector<Objeto*> &objetos, vector<Luz*> &lu
         }
     }
     if (hay_interseccion and pObj->luz != nullptr) {
-        //color = pObj->getColor(rayo);
-        color = pObj->color;
+        // max t
+        //float t_max = pObj->
+        color = pObj->getColor(rayo);
+        //color = pObj->color;
 
     } else if (hay_interseccion) {
         // componente ambiente

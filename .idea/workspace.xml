@@ -15,9 +15,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Camara.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Camara.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mundo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Mundo.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mundo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Mundo.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Objeto.h" beforeDir="false" afterPath="$PROJECT_DIR$/Objeto.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Objeto.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Objeto.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +67,8 @@
       <workItem from="1662477665012" duration="3764000" />
       <workItem from="1662566926372" duration="6831000" />
       <workItem from="1662660372118" duration="6263000" />
-      <workItem from="1663172252775" duration="6393000" />
+      <workItem from="1663172252775" duration="6798000" />
+      <workItem from="1663265649120" duration="3301000" />
     </task>
     <servers />
   </component>
@@ -94,7 +93,7 @@
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Camara.cpp</url>
           <line>70</line>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

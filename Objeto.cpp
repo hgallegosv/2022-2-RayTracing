@@ -42,7 +42,7 @@ vec3 Esfera::getColor(Rayo &rayo) {
         float distancia = (p2-p1).modulo();
         float sigma_a = 0.1;
         //float transmision = exp(-distancia * sigma_a);
-        return color * (1-distancia/radio);
+        return color * (distancia/(2*radio));
     }
     return color;
 }
